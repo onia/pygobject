@@ -35,9 +35,9 @@ import math
 # Python 2 and 3 handle UTF8 differently
 if sys.version_info < (3, 0):
     BYTES_TEXT = "I \xe2\x99\xa5 GTK+"
-    UTF8_TEXT = unicode(BYTES_TEXT, 'UTF-8')
+    UTF8_TEXT = str(BYTES_TEXT, 'UTF-8')
     BYTES_HEART = "\xe2\x99\xa5"
-    HEART = unicode(BYTES_HEART, 'UTF-8')
+    HEART = str(BYTES_HEART, 'UTF-8')
 else:
     UTF8_TEXT = "I ♥ GTK+"
     BYTES_TEXT = bytes(UTF8_TEXT, 'utf-8')

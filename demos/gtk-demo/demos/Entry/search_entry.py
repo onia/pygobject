@@ -27,7 +27,7 @@ This demo shows how to use these features in a search entry.
 from gi.repository import Gtk, GObject
 
 (PIXBUF_COL,
- TEXT_COL) = range(2)
+ TEXT_COL) = list(range(2))
 
 
 class SearchboxApp:

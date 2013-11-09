@@ -33,7 +33,7 @@ from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
 
 
 (PIXBUF_COL,
- TEXT_COL) = range(2)
+ TEXT_COL) = list(range(2))
 
 
 class MaskEntry(Gtk.Entry):

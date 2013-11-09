@@ -191,7 +191,7 @@ toggle_action_entries = (
 
 (COLOR_RED,
  COLOR_GREEN,
- COLOR_BLUE) = range(3)
+ COLOR_BLUE) = list(range(3))
 
 color_action_entries = (
     ("Red", None,                               # name, stock id
@@ -207,7 +207,7 @@ color_action_entries = (
 
 (SHAPE_SQUARE,
  SHAPE_RECTANGLE,
- SHAPE_OVAL) = range(3)
+ SHAPE_OVAL) = list(range(3))
 
 shape_action_entries = (
     ("Square", None,                            # name, stock id

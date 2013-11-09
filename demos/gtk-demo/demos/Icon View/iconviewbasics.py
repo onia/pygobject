@@ -36,7 +36,7 @@ class IconViewApp:
      COL_DISPLAY_NAME,
      COL_PIXBUF,
      COL_IS_DIRECTORY,
-     NUM_COLS) = range(5)
+     NUM_COLS) = list(range(5))
 
     def __init__(self, demoapp):
         self.pixbuf_lookup = {}

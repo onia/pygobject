@@ -57,7 +57,7 @@ class Demo(GObject.GObject):
 
         package = __import__(packagename, globals(), locals(), [modulename], 0)
         module = getattr(package, modulename)
-
+        module.title = modulename
         try:
             return cls(module.title, module, path)
         except AttributeError as e:
@@ -103,7 +103,7 @@ class DemoTreeStore(Gtk.TreeStore):
         return sorted(demo_file_list, key=str.lower)
 
     def _get_parent_node(self, name):
-        if not name in self._parent_nodes.keys():
+        if not name in list(self._parent_nodes.keys()):
             node = self.append(None, (name, None, Pango.Style.NORMAL))
             self._parent_nodes[name] = node
 

@@ -63,7 +63,7 @@ class ListStoreApp:
      COLUMN_ICON,
      COLUMN_ACTIVE,
      COLUMN_SENSITIVE,
-     NUM_COLUMNS) = range(9)
+     NUM_COLUMNS) = list(range(9))
 
     def __init__(self):
         self.window = Gtk.Window()

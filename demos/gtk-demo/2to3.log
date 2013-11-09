@@ -1,0 +1,87 @@
+--- .\gtk-demo.py	(original)
++++ .\gtk-demo.py	(refactored)
+@@ -103,7 +103,7 @@
+         return sorted(demo_file_list, key=str.lower)
+ 
+     def _get_parent_node(self, name):
+-        if not name in self._parent_nodes.keys():
++        if not name in list(self._parent_nodes.keys()):
+             node = self.append(None, (name, None, Pango.Style.NORMAL))
+             self._parent_nodes[name] = node
+ 
+--- .\demos\appwindow.py	(original)
++++ .\demos\appwindow.py	(refactored)
+@@ -191,7 +191,7 @@
+ 
+ (COLOR_RED,
+  COLOR_GREEN,
+- COLOR_BLUE) = range(3)
++ COLOR_BLUE) = list(range(3))
+ 
+ color_action_entries = (
+     ("Red", None,                               # name, stock id
+@@ -207,7 +207,7 @@
+ 
+ (SHAPE_SQUARE,
+  SHAPE_RECTANGLE,
+- SHAPE_OVAL) = range(3)
++ SHAPE_OVAL) = list(range(3))
+ 
+ shape_action_entries = (
+     ("Square", None,                            # name, stock id
+--- .\demos\combobox.py	(original)
++++ .\demos\combobox.py	(refactored)
+@@ -33,7 +33,7 @@
+ 
+ 
+ (PIXBUF_COL,
+- TEXT_COL) = range(2)
++ TEXT_COL) = list(range(2))
+ 
+ 
+ class MaskEntry(Gtk.Entry):
+--- .\demos\rotatedtext.py	(original)
++++ .\demos\rotatedtext.py	(refactored)
+@@ -35,9 +35,9 @@
+ # Python 2 and 3 handle UTF8 differently
+ if sys.version_info < (3, 0):
+     BYTES_TEXT = "I \xe2\x99\xa5 GTK+"
+-    UTF8_TEXT = unicode(BYTES_TEXT, 'UTF-8')
++    UTF8_TEXT = str(BYTES_TEXT, 'UTF-8')
+     BYTES_HEART = "\xe2\x99\xa5"
+-    HEART = unicode(BYTES_HEART, 'UTF-8')
++    HEART = str(BYTES_HEART, 'UTF-8')
+ else:
+--- .\demos\Entry\search_entry.py	(original)
++++ .\demos\Entry\search_entry.py	(refactored)
+@@ -27,7 +27,7 @@
+ from gi.repository import Gtk, GObject
+ 
+ (PIXBUF_COL,
+- TEXT_COL) = range(2)
++ TEXT_COL) = list(range(2))
+ 
+ 
+ class SearchboxApp:
+--- .\demos\Icon View\iconviewbasics.py	(original)
++++ .\demos\Icon View\iconviewbasics.py	(refactored)
+@@ -36,7 +36,7 @@
+      COL_DISPLAY_NAME,
+      COL_PIXBUF,
+      COL_IS_DIRECTORY,
+-     NUM_COLS) = range(5)
++     NUM_COLS) = list(range(5))
+ 
+     def __init__(self, demoapp):
+         self.pixbuf_lookup = {}
+--- .\demos\Tree View\liststore.py	(original)
++++ .\demos\Tree View\liststore.py	(refactored)
+@@ -63,7 +63,7 @@
+      COLUMN_ICON,
+      COLUMN_ACTIVE,
+      COLUMN_SENSITIVE,
+-     NUM_COLUMNS) = range(9)
++     NUM_COLUMNS) = list(range(9))
+ 
+     def __init__(self):
+         self.window = Gtk.Window()
