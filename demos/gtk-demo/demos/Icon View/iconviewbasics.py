@@ -169,16 +169,19 @@ class IconViewApp:
         gicon = info.get_icon()
 
         # check to see if it is an image format we support
-        for format in GdkPixbuf.Pixbuf.get_formats():
-            for mime_type in format.get_mime_types():
+        for GdkPixbufFormat in GdkPixbuf.Pixbuf.get_formats():
+            for mime_type in GdkPixbufFormat.get_mime_types():
                 content_type = Gio.content_type_from_mime_type(mime_type)
                 if content_type is not None:
                     break
-
-            format_gicon = Gio.content_type_get_icon(content_type)
-            if format_gicon.equal(gicon):
-                gicon = f.icon_new()
-                break
+            #TODO: Here 'content_type' could be None, need to fix
+            try:
+                format_gicon = Gio.content_type_get_icon(content_type)
+                if format_gicon.equal(gicon):
+                    gicon = f.icon_new()
+                    break
+            except:
+                pass
 
         if gicon in self.pixbuf_lookup:
             return self.pixbuf_lookup[gicon]
